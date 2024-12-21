@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="textColor">#FF768689</color>
+    <color name="subHeadingColor">#FF888888</color>
+    <color name="dark">#C8000000</color>
+    <color name="headingColor">#FF1098F7</color>
+    <color name="grey">#808080</color>"
+    <color name="cardColor">#F3F5FA</color>
+    <color name="cardColor2">#3ECA7B65</color>
+    <color name="blue">#167BC4</color>
+    <color name="edttextBg">#E2E2E3</color>
+    <color name="darkgren">#53B175</color>
+    <color name="action_color">#EBEBEB</color>
+    <color name="line_color">#F3F5FA</color>
+
+</resources>

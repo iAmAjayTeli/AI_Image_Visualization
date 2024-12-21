@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Result">
+
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your Result"
+            android:fontFamily="@font/lexend_semibold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="30dp"
+            android:textSize="20sp"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/header"
+            >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+               android:paddingBottom="20dp"
+                android:layout_marginTop="20sp"
+                android:gravity="center"
+                >
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="4dp">
+
+                    <ImageView
+                        android:id="@+id/image"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/nature" />
+                </androidx.cardview.widget.CardView>
+
+
+                <EditText
+                    android:id="@+id/message_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="20sp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/edit_back"
+                    android:fontFamily="@font/lexend_semibold"
+                    android:clickable="false"
+                    android:focusableInTouchMode="false"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:hint="Generated Caption and tags appears here"
+                    android:textColor="@color/black"
+                    android:textSize="13sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/generateCaption"
+                    style="@style/Widget.Material3.Button.ElevatedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="40dp"
+                    android:backgroundTint="@color/blue"
+                    android:drawablePadding="30dp"
+                    android:elevation="10dp"
+                    android:text="Generate Caption"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/action_color"
+                    app:cornerRadius="10dp"
+                    app:iconGravity="textEnd"
+                    app:iconTint="@color/darkgren" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/generateTag"
+                    style="@style/Widget.Material3.Button.ElevatedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="40dp"
+                    android:backgroundTint="@color/darkgren"
+                    android:drawablePadding="30dp"
+                    android:elevation="10dp"
+                    android:text="Generate Caption"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/action_color"
+                    app:cornerRadius="10dp"
+                    app:iconGravity="textEnd"
+                    app:iconTint="@color/darkgren" />
+
+            </LinearLayout>
+
+
+
+
+
+
+        </ScrollView>
+
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
