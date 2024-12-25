@@ -6,5 +6,9 @@
         <item name="android:windowIsTranslucent">true</item>
     </style>
 
+    <style name="CustomAlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowBackground">@drawable/popup_background</item>
+    </style>
+
     <style name="Theme.MyConnect" parent="Base.Theme.MyConnect" />
 </resources>

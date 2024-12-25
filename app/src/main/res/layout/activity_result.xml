@@ -8,40 +8,50 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Result">
+        tools:context=".view.Result">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back"
+            android:padding="3dp"
+            app:tint="@color/blue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/header"
+            android:layout_marginStart="10dp"/>
 
         <TextView
             android:id="@+id/header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Your Result"
-            android:fontFamily="@font/lexend_semibold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="30dp"
-            android:textSize="20sp"/>
+            android:textColor="@color/blue"
+            android:fontFamily="@font/lexend_semibold"
+            android:text="AI Generator"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/header"
-            >
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/header">
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_marginStart="15dp"
-                android:layout_marginEnd="15dp"
-               android:paddingBottom="20dp"
                 android:layout_marginTop="20sp"
+                android:layout_marginEnd="15dp"
                 android:gravity="center"
-                >
+                android:orientation="vertical"
+                android:paddingBottom="40dp">
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
@@ -60,48 +70,81 @@
 
 
                 <EditText
-                    android:id="@+id/message_input"
+                    android:id="@+id/question"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="70dp"
                     android:layout_marginStart="5dp"
                     android:layout_marginTop="20sp"
                     android:layout_marginEnd="5dp"
                     android:background="@drawable/edit_back"
                     android:fontFamily="@font/lexend_semibold"
-                    android:clickable="false"
-                    android:focusableInTouchMode="false"
                     android:gravity="center_vertical|center_horizontal"
-                    android:hint="Generated Caption and tags appears here"
+                    android:hint="Write your Question here?"
                     android:textColor="@color/black"
                     android:textSize="13sp" />
 
+                <EditText
+                    android:id="@+id/output"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="20sp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/edit_back"
+                    android:fontFamily="@font/lexend_semibold"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textColor="@color/black"
+                    android:padding="5dp"
+                    android:minHeight="150dp"
+                    android:textSize="13sp"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/copyShare"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    >
+
+                    <ImageView
+                        android:id="@+id/shareImg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/share"
+                        android:layout_gravity="end"
+                        android:layout_marginStart="5dp"
+                        app:tint="@color/darkgren"/>
+
+                    <ImageView
+                        android:id="@+id/copyImg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/copy"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
+                        app:tint="@color/blue"/>
+
+
+                </LinearLayout>
+
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/generateCaption"
+                    android:id="@+id/generateBtn"
                     style="@style/Widget.Material3.Button.ElevatedButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="40dp"
+                    android:layout_marginTop="15dp"
                     android:backgroundTint="@color/blue"
                     android:drawablePadding="30dp"
                     android:elevation="10dp"
-                    android:text="Generate Caption"
-                    android:layout_marginTop="10dp"
-                    android:textColor="@color/action_color"
-                    app:cornerRadius="10dp"
-                    app:iconGravity="textEnd"
-                    app:iconTint="@color/darkgren" />
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/generateTag"
-                    style="@style/Widget.Material3.Button.ElevatedButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="40dp"
-                    android:backgroundTint="@color/darkgren"
-                    android:drawablePadding="30dp"
-                    android:elevation="10dp"
-                    android:text="Generate Caption"
-                    android:layout_marginTop="10dp"
+                    android:text="Generate"
                     android:textColor="@color/action_color"
                     app:cornerRadius="10dp"
                     app:iconGravity="textEnd"
@@ -109,17 +152,7 @@
 
             </LinearLayout>
 
-
-
-
-
-
         </ScrollView>
-
-
-
-
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
